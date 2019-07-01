@@ -40,9 +40,11 @@ In addition to the user-specified attributes outlined above, the application als
 The application consists of a single main window which displays an overview of the employees currently in the system. Entries are listed in table form (Fig. 2.1.1). However, whenever the database is empty, the table is replaced by a small user prompt (Fig. 2.1.2).
 
 ![211](211.png)
+
 *Fig. 2.1.1. Main window displaying an overview of the employees in the system.*
 
 ![212](212.png)
+
 *Fig. 2.1.2. Main window displaying an empty database.*
 
 There are 2 dropdown command buttons which serve as the primary point of interaction with the system. They group conceptually related actions together:
@@ -79,6 +81,7 @@ Some final notes on the primary system table:
     - If changes have been saved however, the program quits immediately when the user closes the window
 
 ![231](231.png)
+
 *Fig. 2.3.1. The user is asked to confirm before quitting if there are unsaved changes.*
 
 ## 3. System Actions
@@ -86,9 +89,11 @@ Some final notes on the primary system table:
 To add an employee to the system, select **System > Add**. This action invokes the Add Dialog (Fig. 3.1.1). The dialog consists of several empty text fields and unselected radio buttons. When empty, the text fields display grey text hints, informing the user of what information they should enter in that field. Note that the fields specific to part-time and full-time employees appear contextually based on the selection of the **Part-time** and **Full-time** radio buttons (Fig. 3.1.2).
 
 ![311](311.png)
+
 *Fig. 3.1.1. Instance of a new Add Dialog.*
 
 ![3112](312.png)
+
 *Fig. 3.1.2. The type-specific fields appear contextually based on type selection.*
 
 When valid inputs have been entered into all available fields, choosing **Add** will add the new employee to the system and refresh the main window. The following criteria determine whether the inputs are valid:
@@ -105,27 +110,33 @@ When valid inputs have been entered into all available fields, choosing **Add** 
 If any of these criteria have not been met, choosing **Add** will invoke a message dialog prompting the user to correct their inputs (Fig. 3.1.3).
 
 ![313](313.png)
+
 *Fig. 3.1.3. Example of a message indicating detection of an invalid input.*
 
 ### 3.2 Remove Employee
 To remove an employee from the system, select **System > Remove**. This action invokes the Remove Dialog (Fig. 3.2.1). The user can then search for the employee number of the employee they wish to remove by entering the query and choosing **Search**, or pressing the Enter key. A contextual text hint below the search field prompts users to enter an employee number. If the number is not found, the text hint will display an error message and prompt the user to search again (Fig. 3.2.2). If the number is found, the **Remove** option is enabled, and the text hint will display the queried employee’s name and ask the user to confirm their removal from the system (Fig. 3.2.3). Choosing **Remove** will remove the queried employee and refresh the main window.
 
 ![321](321.png)
+
 *Fig. 3.2.1. Instance of a new Remove Dialog.*
 
 ![322](322.png)
+
 *Fig. 3.2.2. The text hint updates dynamically to guide the user.*
 
 ![323](323.png)
+
 *Fig. 3.2.3. If an employee is found, confirmation is required to complete removal.*
 
 ### 3.3 Edit Employee Information
 To edit an existing employee’s information, select **System > Edit**. This action invokes the Edit Dialog (Fig. 3.3.1). This form is essentially a hybrid of the Add Dialog and the Remove Dialog. The user can search for the employee whose information they wish to edit by entering the employee number into the search field. If an employee with that number is found in the system, the form will be populated with text fields like the Add Dialog, with each text field displaying its current value (Fig. 3.3.2). Once the user is finished making their changes, choosing **Done** will apply the changes to the system and refresh the main window if all inputs are valid.
 
 ![331](331.png)
+
 *Fig. 3.3.1. Instance of a new Edit Dialog.*
 
 ![332](332.png)
+
 *Fig. 3.3.2. When an employee is found, the form is populated with their editable information.*
 
 For the most part, the same input validation checks are done here as in the Add Dialog. If the employee number is found in the system, the following criteria determine whether the remaining inputs are valid:
@@ -145,9 +156,11 @@ In addition, note that it is possible to change an existing employee from part-t
 To view an employee’s detailed information, select **System > Search**. This action invokes the Search Dialog (Fig. 3.4.1).
 
 ![341](341.png)
+
 *Fig. 3.4.1. Instance of a new Search Dialog.*
 
 ![342](342.png)
+
 *Fig. 3.4.2. When an employee is found, the form is populated with their detailed information.*
 
 The user is presented with a search field. As with the Remove and Edit Dialogs, a contextual text hint below the search field prompts users to enter an employee number. If the query is invalid or is not found, the text hint will display an error message and prompt the user to search again. If an employee with that number is found, the form will be populated with a static content panel containing their detailed information (Fig. 3.4.2). This includes both user-entered as well as calculated values, namely:
@@ -171,14 +184,17 @@ To leave this page and return to the main window, choose **Close**.
 To open an archive file and load its data into the application, select **File > Open**. This action invokes the File Chooser (Fig. 4.1.1). However, if the user has unsaved changes they will be prompted to confirm their intention as loading a new file will overwrite the current state of the system (Fig. 4.1.2). The user may browse their computer for a valid archive file. The program will only open files with the custom `*.ems` extension. For practical purposes, these archive files are simple text files as opposed to binary files, so they can be opened with a standard text editor application. However, it is strongly recommended that they are NOT modified manually, as doing so could make the archive unreadable to the application.
 
 ![411](411.png)
-*Fig. 4.1.1. An instance of the Open File Chooser. The program only allows the selection of *.ems files.*
+
+*Fig. 4.1.1. An instance of the Open File Chooser. The program only allows the selection of `*.ems` files.*
 
 ![412](412.png)
+
 *Fig. 4.1.2. Loading a new file will overwrite anything currently in the system, so unsaved changes should first be saved.*
 
 Once the user selects a file, the application will attempt to load it into the system. If the file has been damaged or incorrectly modified, the application will inform the user that the file is corrupted, and abort the load operation (Fig. 4.1.3).
 
 ![413](413.png)
+
 *Fig. 4.1.3. The program will not attempt to load corrupted files.*
 
 ### 4.2 Save File
@@ -187,11 +203,13 @@ To save the data in the application to an archive file, select **File > Save as*
 There are several situations where the save operation will fail, and the program will proactively handle these cases. For instance, it will display an error message if the user tries to save a file in a location which they do not have permission to write to.
 
 ![421](421.png)
-*Fig. 4.2.1. An instance of the Save File Chooser. The program will only create and write to *.ems files.*
+
+*Fig. 4.2.1. An instance of the Save File Chooser. The program will only create and write to `*.ems` files.*
 
 Additionally, to protect user data, the application will not overwrite existing files. Therefore, it is not possible to save an archive to a location which already contains a file of the same name. Attempting to do this will also generate an error message, and the user will need to re-select **File > Save** as to continue generating the archive file (Fig. 4.2.2).
 
 ![422](422.png)
+
 *Fig. 4.2.2. Files cannot have the same name and location as an existing one.*
 
 ### 4.3 More About `*.ems` Files

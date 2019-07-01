@@ -76,23 +76,7 @@ public class MyHashTable {
             }
         }
         return null;
-    }
-
-    
-    public void displayTable() {
-        // Iterates thru table; displays info in the following manner:
-        // Each bucket printed on one line
-        // Each line prints the ArrayList corresponding to the bucket
-        // For each ArrayList, only the empNum attribute is actually printed (for clarity)
-        for (int i = 0; i < buckets.length; i++) {
-            for (int j = 0; j < (buckets[i].size()); j++) {
-                // sketchy line vvvv
-                System.out.print((buckets[i].get(j)).getEmpNum() + ", ");
-            }
-            System.out.println();
-        }
-    }
-    
+    }    
     
     public ArrayList<EmployeeInfo>[] getBuckets() {
         return buckets;
